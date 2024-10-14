@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   http: ^1.2.2
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,7 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -80,9 +82,7 @@ flutter:
       fonts:
         - asset: assets/fonts/HelveticaNeue-Regular.otf
         - asset: assets/fonts/HelveticaNeue-Bold.otf
-          weight: 700
         - asset: assets/fonts/HelveticaNeue-Medium.otf
-          weight: 500
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

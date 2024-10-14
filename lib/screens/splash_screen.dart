@@ -1,4 +1,5 @@
 import 'package:be_talent_desafio_mobile/constants.dart';
+import 'package:be_talent_desafio_mobile/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -39,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen>
         color: Pallete.bluePrimary,
         child: Center(
           child: Image.asset(
-            "assets/images/Logo.png",
+            ImagesPath.whiteLogo,
             fit: BoxFit.cover,
           ),
         ),

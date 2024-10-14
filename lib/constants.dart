@@ -10,3 +10,10 @@ class Pallete {
   static const Color gray00 = Color(0xFFF0F0F0);
   static const Color white = Color(0xFFFFFFFF);
 }
+
+class ImagesPath{
+
+  static const String whiteLogo = "assets/images/logo_white.png";
+  static const String blackLogo = "assets/images/logo_black.png";
+  static const String notificationIcon = "assets/images/icons/notification_icon.png"; 
+}
