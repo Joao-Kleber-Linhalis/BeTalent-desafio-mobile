@@ -2,12 +2,12 @@ import 'package:be_talent_desafio_mobile/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MsMyBadgeComponent extends StatelessWidget {
+class DmMyBadgeComponent extends StatelessWidget {
   final Widget child;
   final String value;
   final Color? color;
 
-  const MsMyBadgeComponent({
+  const DmMyBadgeComponent({
     super.key,
     required this.child,
     required this.value,

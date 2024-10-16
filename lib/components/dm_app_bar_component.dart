@@ -1,4 +1,4 @@
-import 'package:be_talent_desafio_mobile/components/ms_my_badge_component.dart';
+import 'package:be_talent_desafio_mobile/components/dm_my_badge_component.dart';
 import 'package:be_talent_desafio_mobile/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class DmAppBarComponent extends StatelessWidget implements PreferredSizeWidget {
                 height: 34,
               )
             : CircleAvatar(
-                backgroundColor: Pallete.bluePrimary,
+                backgroundColor: Pallete.gray05,
                 child: Text(
                   "CG",
                   style: Theme.of(context).textTheme.headlineSmall,
@@ -31,7 +31,7 @@ class DmAppBarComponent extends StatelessWidget implements PreferredSizeWidget {
       actions: headerWithLogo
           ? null
           : [
-              MsMyBadgeComponent(
+              DmMyBadgeComponent(
                 value: "02",
                 child: IconButton(
                   onPressed: () {},
