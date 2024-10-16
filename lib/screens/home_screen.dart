@@ -1,5 +1,6 @@
 import 'package:be_talent_desafio_mobile/components/dm_app_bar_component.dart';
 import 'package:be_talent_desafio_mobile/components/dm_search_bar_component.dart';
+import 'package:be_talent_desafio_mobile/models/employee.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,6 +12,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController textEditingController = TextEditingController();
+  List<Employee> employees = [];
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:be_talent_desafio_mobile/constants.dart';
 import 'package:http/http.dart' as http;
 
 class Employee {
-  final int id;
+  final String id;
   final String name;
   final String job;
   final DateTime admissionDate;
@@ -31,17 +31,16 @@ class Employee {
     );
   }
 
-  static const String _url = "${Constants.API_BASE_URL}/employees";
+  static const String _url = "${Constants.API_BASE_URL}/employees"; //Endpoint
 
   static Future<List<Employee>> loadEmployees() async {
     List<Employee> employees = [];
     try {
       final response = await http.get(Uri.parse(_url));
       if (response.statusCode == 200) {
-        final repoEmployeeData = json.decode(response.body);
-        final List<dynamic> employeeList = repoEmployeeData['employees'];
+        final List<dynamic> repoEmployeeData = json.decode(response.body);
         employees =
-            employeeList.map((json) => Employee.fromJson(json)).toList();
+            repoEmployeeData.map((json) => Employee.fromJson(json)).toList();
         return employees;
       } else {
         throw Exception(
