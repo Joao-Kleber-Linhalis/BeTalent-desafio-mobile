@@ -12,8 +12,11 @@ class Pallete {
 }
 
 class ImagesPath{
-
   static const String whiteLogo = "assets/images/logo_white.png";
   static const String blackLogo = "assets/images/logo_black.png";
   static const String notificationIcon = "assets/images/icons/notification_icon.png"; 
+}
+
+class Constants {
+  static const API_BASE_URL = "http://10.0.2.2:3000";
 }
