@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:be_talent_desafio_mobile/components/dm_app_bar_component.dart';
 import 'package:be_talent_desafio_mobile/components/dm_search_bar_component.dart';
 import 'package:be_talent_desafio_mobile/constants.dart';
@@ -79,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           title: Text(
-                            screenController.filteredEmployees[index].name,
+                            utf8.decode(screenController.filteredEmployees[index].name.codeUnits),
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
                           trailing: IconButton(

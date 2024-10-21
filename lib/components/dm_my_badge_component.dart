@@ -22,16 +22,16 @@ class DmMyBadgeComponent extends StatelessWidget {
         child,
         Positioned(
           right: 10,
-          top: 5,
+          top: 7,
           child: Container(
             padding: const EdgeInsets.all(3),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Pallete.bluePrimary,
             ),
-            constraints: BoxConstraints(
-              minHeight: 22,
-              minWidth: 22,
+            constraints: const BoxConstraints(
+              minHeight: 20,
+              minWidth: 20,
             ),
             child: Text(
               value,

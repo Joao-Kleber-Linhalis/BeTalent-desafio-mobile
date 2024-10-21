@@ -32,7 +32,7 @@ class DmAppBarComponent extends StatelessWidget implements PreferredSizeWidget {
           ? null
           : [
               DmMyBadgeComponent(
-                value: "02",
+                value: "02", //Dado mockato para ser igual o exemplo.
                 child: IconButton(
                   onPressed: () {},
                   icon: Image.asset(ImagesPath.notificationIcon),
