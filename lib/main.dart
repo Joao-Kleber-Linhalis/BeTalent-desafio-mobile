@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           //H2
           headlineMedium: TextStyle(
             fontSize: 16,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.bold,
           ),
           //H3
           headlineSmall: TextStyle(
