@@ -1,4 +1,3 @@
-
 import 'package:be_talent_desafio_mobile/components/dm_app_bar_component.dart';
 import 'package:be_talent_desafio_mobile/components/dm_contact_list_component.dart';
 import 'package:be_talent_desafio_mobile/components/dm_search_bar_component.dart';
@@ -42,7 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
               child: DmSearchBarComponent(
-                onChanged: (value) {},
+                onChanged: (value) {
+                  setState(() {
+                    screenController.filter(value);
+                  });
+                },
                 textEditingController: textEditingController,
                 borderRadius: 100,
               ),
