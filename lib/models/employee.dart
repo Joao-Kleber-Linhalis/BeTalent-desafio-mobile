@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:be_talent_desafio_mobile/constants.dart';
+import 'package:be_talent_desafio_mobile/models/details_item.dart';
+import 'package:be_talent_desafio_mobile/utils/tools.dart';
 import 'package:http/http.dart' as http;
 
 class Employee {
@@ -50,4 +52,20 @@ class Employee {
       throw Exception("Erro ao carregar os funcionários: $e");
     }
   }
+
+  //Já trabalhei com essa forma e foi muito fácil adicionar informações a ser mostradas no futuro, optei por adotar ela aqui também.
+  List<DetailsItem> get detailsModel => [
+        DetailsItem(
+          label: "Cargo",
+          value: job,
+        ),
+        DetailsItem(
+          label: "Data de Admissão",
+          value: Tools.formatDateToString(admissionDate),
+        ),
+        DetailsItem(
+          label: "Telefone",
+          value: Tools.formatPhoneNumber(phone),
+        ),
+      ];
 }

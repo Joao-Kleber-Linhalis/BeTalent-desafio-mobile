@@ -17,6 +17,7 @@ class DmContactTileComponent extends StatefulWidget {
 
 class _DmContactTileComponentState extends State<DmContactTileComponent> {
   final screenController = HomeScreenController.instance;
+  bool _expanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +65,13 @@ class _DmContactTileComponentState extends State<DmContactTileComponent> {
       );
     }
 
+    
     final isLast = widget.index == screenController.filteredEmployees.length;
-
-    return Container(
+    print(screenController
+        .filteredEmployees[widget.index - 1].detailsModel.length);
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      height: _expanded ? 200  : 60,
       decoration: BoxDecoration(
         borderRadius: isLast
             ? const BorderRadius.only(
@@ -91,29 +96,66 @@ class _DmContactTileComponentState extends State<DmContactTileComponent> {
           ),
         ),
       ),
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(
-            screenController.filteredEmployees[widget.index - 1].image,
-          ),
-        ),
-        title: Text(
-          utf8.decode(screenController
-              .filteredEmployees[widget.index - 1].name.codeUnits),
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        trailing: Container(
-          alignment: Alignment.center,
-          width: 30, // Largura igual ao ícone no cabeçalho
-          child: InkWell(
-            child: const Icon(
-              Icons.keyboard_arrow_down,
-              color: Pallete.bluePrimary,
-              size: 30,
+      child: Column(
+        children: [
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                screenController.filteredEmployees[widget.index - 1].image,
+              ),
             ),
-            onTap: () {},
+            title: Text(
+              utf8.decode(screenController
+                  .filteredEmployees[widget.index - 1].name.codeUnits),
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            trailing: Container(
+              alignment: Alignment.center,
+              width: 30, // Largura igual ao ícone no cabeçalho
+              child: InkWell(
+                child: const Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Pallete.bluePrimary,
+                  size: 30,
+                ),
+                onTap: () {
+                  setState(() {
+                    _expanded = !_expanded;
+                  });
+                },
+              ),
+            ),
           ),
-        ),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            height: _expanded ? 140 : 0,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 4,
+            ),
+            child: ListView(
+              children: screenController
+                  .filteredEmployees[widget.index - 1].detailsModel
+                  .map(
+                (details) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        details.label,
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                      Text(
+                        details.value.toString(),
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      ),
+                    ],
+                  );
+                },
+              ).toList(),
+            ),
+          )
+        ],
       ),
     );
   }
