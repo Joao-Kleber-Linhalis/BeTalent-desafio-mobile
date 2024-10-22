@@ -1,6 +1,9 @@
 <h1 align="center">Desafio BeMobile</h1>
-<p align="center">Projeto desenvolvido com o intuito de mostrar e gerenciar usuários cadastrados em um banco de dados. Podendo pesquisá-los por <strong>Nome</strong>, 
-<strong>Cargo</strong> e <strong>Telefone</strong></p>
+
+<h1 align="center">:computer: Sobre o Projeto</h1>
+<p align="center">Este projeto foi desenvolvido com o intuito de mostrar e gerenciar usuários cadastrados em um banco de dados. É possível pesquisar por <strong>Nome</strong>, 
+<strong>Cargo</strong> e <strong>Telefone</strong>.</p>
+<br />
 
 <h1 align="center">:sparkles: Tecnologias</h1>
 <p align="center">Esse projeto foi desenvolvido com</h1>
